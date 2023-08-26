@@ -7,7 +7,7 @@ import cors from 'cors';
 const app=express();
 //Now befor routing we need to use cors
 app.use(cors());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded());
 app.use(express.json());
 
 app.use('/',routes);

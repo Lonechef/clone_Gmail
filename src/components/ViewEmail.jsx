@@ -17,7 +17,7 @@ const  Subject = styled(Typography)({
 })
 
 const Indicator =styled(Box)({
-    fontSize: 12,
+    fontSize: '12 !important',
     background:'#ddd',
     color:'#222',
     padding: '2px 4px',
@@ -26,6 +26,7 @@ const Indicator =styled(Box)({
     alignSelf:'center'
 
 })
+
 
 const Container = styled(Box)({
     marginLeft: 15,
@@ -41,9 +42,11 @@ const Container = styled(Box)({
 
 
 const Date =styled(Box)({
+
    margin: '0 50px  0 auto' ,
+   fontSiz: '12',
    color: '#5E5E5E',  
-   textAlign:'right !important' 
+   
 })
 
 const Image =styled('img')({
@@ -67,7 +70,7 @@ const ViewEmail =()=>{
         window.history.back();
     }
     return(
-    <Box style={openDrawer ? {marginLeft: 250 } : {width:'100%'}  }>
+    <Box style={openDrawer ? {marginLeft: 250,width: '100%' } : {width:'100%'}  }>
     
         <IconWrapper>
             <ArrowBack onClick={()=>window.history.back()} color="action" fontSize="samll"/>

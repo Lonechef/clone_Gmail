@@ -62,7 +62,7 @@ const SendButton =styled(Button)({
 })
 const ComposeMail = ({openDialog,setOpenDialog})=>{
     const [data,Setdata]=useState({});
-    const sentEmailService = useApi(API_URLS.saveSentEmail);
+    const sentEmailService = useApi(API_URLS.saveSentEmails);
     const saveDraftService = useApi(API_URLS.saveDraftEmails);
         const config ={        
             Host : "smtp.elasticemail.com",
@@ -134,7 +134,7 @@ const ComposeMail = ({openDialog,setOpenDialog})=>{
         else{
 
         }
-        setOpenDialog(false);
+       // setOpenDialog(false);
     }
     const deleteMail=()=>{
         setOpenDialog(false);
@@ -154,20 +154,22 @@ const ComposeMail = ({openDialog,setOpenDialog})=>{
                 <Close fontSize='small' onClick={(e)=>closeComposeMail(e)}/>
               </Header>
             <RecipientsWraper>
-                <InputBase placeholder='Recipients' name='to'onChange={(e)=>onValueChange(e)}/>
-                <InputBase placeholder ='Subject' name='subject'onChange={(e)=>onValueChange(e)}/>
+                <InputBase placeholder='Recipients' name='to' onChange={(e)=>onValueChange(e)} value={data.to}/>
+                <InputBase placeholder ='Subject' name='subject'onChange={(e)=>onValueChange(e)} value={data.subject}/>
                            
             </RecipientsWraper>
             <TextField 
             multiline
-            rows={25}
+            rows={20}
             sx={{'& .MuiOutlinedInput-notchedOutline ': {border:'none'}}}
+            name='body'
              onChange={(e)=>onValueChange(e)}
-             name='body'
+             value={data.body}
             />   
             <FooterStyle>
                 <SendButton onClick={(e)=>sendMail(e)}>Send</SendButton>
-                <DeleteOutline onClick={()=>deleteMail()}/>
+                {/* <DeleteOutline onClick={()=>deleteMail()}/> */}
+                <DeleteOutline onClick={() => setOpenDialog(false)} />
             </FooterStyle>
        </Dialog>
     )

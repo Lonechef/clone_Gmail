@@ -1,5 +1,6 @@
 import { Drawer } from '@mui/material';
 import SideBarContent from '../components/SideBarContent'
+
 const Sidebar=({openDrawer})=>{
     return(
        <Drawer

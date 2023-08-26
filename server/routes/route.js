@@ -6,10 +6,12 @@ import { saveSentEmails,getEmails,moveEmailsToBin,toggleStarredEmails,deleteEmai
 const routes=express.Router();
 
 routes.post('/save',saveSentEmails);
-routes.get('/emails/:type',getEmails);
 routes.post('/save-draft',saveSentEmails);
-routes.post('/bin',moveEmailsToBin);
+routes.get('/emails/:type',getEmails);
 routes.post('/starred',toggleStarredEmails);
-routes.post('/delete',deleteEmails)
+routes.delete('/delete',deleteEmails)
+routes.post('/bin',moveEmailsToBin);
+
+
 
 export default routes;
