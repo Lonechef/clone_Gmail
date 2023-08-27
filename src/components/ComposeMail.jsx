@@ -66,8 +66,9 @@ const ComposeMail = ({openDialog,setOpenDialog})=>{
     const saveDraftService = useApi(API_URLS.saveDraftEmails);
         const config ={        
             Host : "smtp.elasticemail.com",
-            Username : process.env.REACT_APP_USERNAME,
-            Password :process.env.REACT_APP_PASSWORD,
+            Username : "parikh1229@yopmail.com",
+            Password :"D1660C4E4E9F649DEC7F0D89A98836D955DD",
+            
             Port:2525,
     }
     const closeComposeMail=(e)=>{
